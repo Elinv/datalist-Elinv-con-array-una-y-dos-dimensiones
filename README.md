@@ -5,7 +5,7 @@
 
 <h1 align="center">
 HTML 👉 Datalist alternativo <br>
-funcionan varios en la mima pagina. <br>
+funcionan varios en la misma pagina. <br>
 Con array uni y bidimensional<br><br>
 El array bidimensional es tu planilla de cáculo.<br><br>
 Elinv (Clase Javascript)</h1>
