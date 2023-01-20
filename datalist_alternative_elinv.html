@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Datalist Elinv con array Uni y bidimensional (Pc, Móvil y Table) [Insensible a mayúscula, minúsculas y acentos]</title>
+	<!-- Favicon-->
+	<link rel="icon" type="image/x-icon" href="./favicon.ico" />
+	<link rel="stylesheet" href="./css/style.css">
+	<script src="./js/arrBidimensional.js"></script>
+	<script src="./js/datalistElinvClass.js"></script>
+
+	<style>
+		#datalistElvArrBid {
+			width: 100%;
+			padding-top: 12px;
+			padding-bottom: 12px;
+			text-align: left;
+		}
+
+		#datalistElvArrBid th {
+			padding-top: 12px;
+			padding-bottom: 12px;
+			text-align: left;
+			background-color: #04AA6D;
+			color: white;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="contenedor">
+
+		<div class="titulo">Datalist Elinv para matrices uni y bi dimensionales.
+			<div class="tit1 vertical-center">
+				Datalist Elinv con clase<br>
+				Apto y funcional para Pc, Móvil y Table <br>
+				[Insensible a mayúscula, minúsculas y acentos].
+				<span style="color:#91b8b3;">Código en Github</span>
+			</div>
+		</div>
+
+		<hr class="linHR">
+
+		<!-- Tag necesarios para implementar el Datalist Unidimensional
+		------------------------------------------------ -->
+		<!-- Input de busqueda -->
+		<input id="search" class="searchBut" type="text" placeholder="Ingrese texto a buscar" />
+		<!-- Muestra la cantidad de resultados alcanzados -->
+		<input id="lblHallados" class="ledRes" type="label" placeholder="Resultados" disabled>
+		<!-- Muestra un solo resultado de la fila seleccionada
+		sea con el mouse o con el teclado. -->
+		<div class="margenArriba">
+			<input id="lblinnerHTML" class="ledResText vertical-center" type="label">
+		</div>
+		<!-- Es visible o invisible dependiendo si hay o no resultados. 
+		Muestra el datalist con los resultados de la busqueda. -->
+		<div id="listTel" class="ClsDLElinv in"></div>
+
+		<hr class="linHR">
+
+		<!-- Tag necesarios para implementar el Datalist bidimensional
+		------------------------------------------------ -->
+		<!-- Input de busqueda -->
+		<input id="search2" class="searchBut" type="text" placeholder="Ingrese texto a buscar" />
+		<!-- Muestra la cantidad de resultados alcanzados -->
+		<input id="lblHallados2" class="ledRes" type="label" placeholder="Resultados" disabled>
+		<!-- Muestra un solo resultado de la fila seleccionada
+		sea con el mouse o con el teclado. -->
+		<div class="margenArriba">
+			<input id="lblinnerHTML2" class="ledResText vertical-center" type="label">
+		</div>
+		<!-- Es visible o invisible dependiendo si hay o no resultados. 
+		Muestra el datalist con los resultados de la busqueda. -->
+		<div id="listTel2" class="ClsDLElinv1 in"></div>
+
+		<hr class="linHR">
+	</div>
+
+	<script>
+		/**
+		 *  * Clase Datalist Elinv
+		 *  * Parametros:
+		 *  * ------------------------------------------------------------
+		 * 	inputSearch :   id del Input de busqueda
+		 * 
+		 *  listDiv:        id del Datalist que es visible o invisible 
+		 *                  dependiendo si hay o no resultados. 
+		 *          		Se muestra con los resultados de la busqueda.
+		 * 
+		 *  ClsDLElinv:     Clase contenedora del datalist
+		 * 
+		 *  options:        Clase que permite ver u ocultar las filas
+		 * 
+		 *  lblinnerHTML:   id del input label que muestra un solo resultado 
+		 *                  de la fila seleccionada sea con el mouse 
+		 *                  o con el teclado.
+		 *  
+		 *  lblHallados:    id del input label que muestra la cantidad 
+		 *                  de resultados alcanzados
+		 * 
+		 *  arrDatalistElv: Parametro array para llenar el datalist
+		 * 
+		 *  titColumn:      Título de las columnas para el caso de un array bidimensional.
+		 * 
+		 *  Posdata: Se podría haber realizado con mucho menos código
+		 *  pero la idea es que sea de la mas fácil comprensión.
+		 *  * ------------------------------------------------------------ 
+		 */
+		
+		// para el array unidimensional
+		let datalistNew = new datalistElinv('search', 'listTel', 'ClsDLElinv', 'optionsUni', 'lblinnerHTML', 'lblHallados', arrUnidim);
+		datalistNew.init(datalistNew);
+
+		// para el array unidimensional
+		let datalistNew2 = new datalistElinv('search2', 'listTel2', 'ClsDLElinv1', 'optionsBid', 'lblinnerHTML2', 'lblHallados2', arrBidim, titColumn);
+		datalistNew2.init(datalistNew2);
+
+
+	</script>
+</body>
+
+</html>
